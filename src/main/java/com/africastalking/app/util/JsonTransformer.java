@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import spark.ResponseTransformer;
 
+import java.util.Map;
 
 public class JsonTransformer implements ResponseTransformer {
     @Override

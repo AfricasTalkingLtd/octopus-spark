@@ -1,6 +1,5 @@
 package com.africastalking.app.routes;
 
-import com.africastalking.app.util.AfricasTalkingGateway;
 
 import static spark.Spark.*;
 
@@ -19,12 +18,6 @@ public class MessagingRouter extends BareBonesRouter {
             String id   = req.params(":id");
 
             String recipients = "+254701435178";
-
-            String message = "We are lumberjacks. We code all day and sleep all night";
-
-            AfricasTalkingGateway gateway  = new AfricasTalkingGateway("IanJuma",
-                    "fc39a99fe94b84a30941fbd7250518d8c90a7f6d3e0cbc2e9c308987a92484f5");
-            gateway.sendMessage(recipients, message);
 
             resp.status(200);
             return resp;

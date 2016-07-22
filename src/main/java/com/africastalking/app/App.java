@@ -4,6 +4,7 @@ import static spark.Spark.*;
 
 import com.africastalking.app.routes.MessagingRouter;
 import com.africastalking.app.routes.USSDRouter;
+import com.africastalking.app.routes.VoiceRouter;
 
 
 public class App {
@@ -25,5 +26,6 @@ public class App {
 
         (new USSDRouter()).initiate();
         (new MessagingRouter()).initiate();
+        (new VoiceRouter()).initiate();
     }
 }

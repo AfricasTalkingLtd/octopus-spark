@@ -1,7 +1,6 @@
 package com.africastalking.app.routes;
 
-
-import static spark.Spark.*;
+import static spark.Spark.post;
 
 public class MessagingRouter extends BareBonesRouter {
 
@@ -11,13 +10,13 @@ public class MessagingRouter extends BareBonesRouter {
         post("/sms/", (req, resp) -> {
             System.out.println(req.body());
 
-            String from = req.params(":from");
-            String to   = req.params(":to");
-            String text = req.params(":text");
-            String date = req.params(":date");
-            String id   = req.params(":id");
+            String from = req.queryParams(":from");
+            String to = req.queryParams(":to");
+            String text = req.queryParams(":text");
+            String date = req.queryParams(":date");
+            String id = req.queryParams(":id");
 
-            String recipients = "+254701435178";
+            System.out.println(String.format("%s, %s %s %s %s ", from, to, text, date, id));
 
             resp.status(200);
             return resp;
@@ -25,19 +24,24 @@ public class MessagingRouter extends BareBonesRouter {
 
         post("/dlr/", (req, resp) -> {
             System.out.println(req.body());
-            String failureReason;
+
 
             String status = req.params(":status");
-            String id     = req.params(":id");
+            String id = req.params(":id");
 
-            if(status.equals("Failed") || status.equals("Rejected"))
-                failureReason = req.params("failureReason");
+            if (status.equals("Failed") || status.equals("Rejected")) {
 
-            // persist in db
+                System.out.println(req.params("failureReason"));
+            } else {
+                // persist in db
+                System.out.println(String.format("%s %s", status, id));
+            }
 
             resp.status(200);
             return resp;
         });
+
+
 
     }
 

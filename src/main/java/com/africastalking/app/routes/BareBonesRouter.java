@@ -9,6 +9,7 @@ import static spark.Spark.*;
 public abstract class BareBonesRouter {
 
     public final void initiate() {
+
         this.doPost();
     }
 

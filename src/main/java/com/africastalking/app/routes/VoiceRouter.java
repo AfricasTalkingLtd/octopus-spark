@@ -1,7 +1,10 @@
 package com.africastalking.app.routes;
 
+<<<<<<< HEAD
 import spark.utils.StringUtils;
 
+=======
+>>>>>>> b31dff02ddfe2b6b346ce3a5098d2c9431219351
 import static spark.Spark.post;
 
 public class VoiceRouter extends BareBonesRouter {
@@ -15,6 +18,7 @@ public class VoiceRouter extends BareBonesRouter {
     protected void doPost() {
         post("/voice/", (req, res) -> {
             String status = req.queryParams(":isActice");
+<<<<<<< HEAD
             String response = " ";
 
             if (status.equals("1")) {
@@ -24,6 +28,14 @@ public class VoiceRouter extends BareBonesRouter {
             res.body(response);
             res.header("content-type", "text/plain");
             return response;
+=======
+
+            if (status.equals("1")) {
+                res.body("<?xml version='1.0' encoding='UTF-8'?><Response><Say>" + message + "</Say> </Response>");
+            }
+            res.status(200);
+            return res;
+>>>>>>> b31dff02ddfe2b6b346ce3a5098d2c9431219351
         });
 
     }

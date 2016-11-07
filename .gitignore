@@ -1,0 +1,12 @@
+.git
+gradle
+gradlew
+gradlew.bat
+.idea/
+build/
+.gradle/
+.gitignore
+*.log
+*.db
+
+

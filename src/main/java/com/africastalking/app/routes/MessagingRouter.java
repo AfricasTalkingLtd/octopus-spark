@@ -19,7 +19,7 @@ public class MessagingRouter extends BareBonesRouter {
             System.out.println(String.format("%s, %s %s %s %s ", from, to, text, date, id));
 
             resp.status(200);
-            return resp;
+            return "ok";
         });
 
         post("/dlr/", (req, resp) -> {
@@ -40,7 +40,6 @@ public class MessagingRouter extends BareBonesRouter {
             resp.status(200);
             return resp;
         });
-
 
 
     }

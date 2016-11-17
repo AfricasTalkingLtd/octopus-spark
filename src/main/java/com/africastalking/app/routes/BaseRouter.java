@@ -1,9 +1,9 @@
 package com.africastalking.app.routes;
 
 import com.africastalking.app.util.JsonTransformer;
-
 import spark.Route;
-import static spark.Spark.*;
+
+import static spark.Spark.get;
 
 
 public abstract class BaseRouter {
@@ -14,6 +14,7 @@ public abstract class BaseRouter {
     }
 
     protected abstract void doGet();
+
     protected abstract void doPost();
 
     protected void getJSON(String path, Route route) {

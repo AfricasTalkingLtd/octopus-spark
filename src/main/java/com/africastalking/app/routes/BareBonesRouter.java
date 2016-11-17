@@ -1,9 +1,9 @@
 package com.africastalking.app.routes;
 
 import com.africastalking.app.util.JsonTransformer;
-
 import spark.Route;
-import static spark.Spark.*;
+
+import static spark.Spark.get;
 
 
 public abstract class BareBonesRouter {

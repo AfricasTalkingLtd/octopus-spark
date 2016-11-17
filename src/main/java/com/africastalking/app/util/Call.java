@@ -1,11 +1,11 @@
 package com.africastalking.app.util;
 
 import com.africastalking.app.routes.VoiceRouter;
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class Call {
     public void call(String message, String phoneNumber) {
-
 
 
         String username = new ReadVars().getUsername();

@@ -1,5 +1,6 @@
 package com.africastalking.app.model;
 
+
 import java.sql.*;
 
 public class Model {

@@ -13,17 +13,16 @@ public class App {
         int minThreads = 9;
         port(8000);
 
-
         int timeOutMillis = 30000;
         threadPool(maxThreads, minThreads, timeOutMillis);
 
         before((request, response) -> {
             System.out.println(request);
         });
-//
-//        after((request, response) -> {
-//            response.header("Content-Encoding", "gzip");
-//        });
+
+        after((request, response) -> {
+            response.header("Content-Encoding", "gzip");
+        });
 
         (new USSDRouter()).initiate();
         (new MessagingRouter()).initiate();
